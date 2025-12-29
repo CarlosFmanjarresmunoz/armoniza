@@ -1,5 +1,5 @@
-.registro{
-   display: flex;
+.registro {
+  display: flex;
   background-color: #0c0c0c;
   min-height: 100vh;
   color: white;
@@ -20,10 +20,6 @@
   margin-bottom: 30px;
 }
 
-.section-video {
-  width: 100%;
-}
-
 .video-box {
   width: 100%;
   border-radius: 10px;
@@ -32,3 +28,77 @@
 }
 
 .video-box img { width: 100%; display: block; }
+
+.registro-main {
+  flex: 1;
+  padding: 60px;
+}
+
+.form-header { text-align: center; margin-bottom: 40px; }
+.form-header h1 { font-size: 2.2rem; font-weight: 500; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.field { display: flex; flex-direction: column; }
+.field label { font-size: 0.85rem; margin-bottom: 8px; color: #888; }
+
+/* --- ESTILO UNIFICADO PARA INPUTS Y SELECTS --- */
+
+.custom-control {
+  /* Forzamos el radio de 10px */
+  border-radius: 10px !important;
+  
+  /* Reset de estilos de navegador */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
+  /* Propiedades visuales */
+  width: 100%;
+  height: 45px;
+  padding: 10px 15px;
+  background-color: #1a1a1a;
+  border: 1px solid #333 !important; /* El borde es necesario para ver el radio */
+  color: white;
+  font-size: 1rem;
+  box-sizing: border-box;
+  outline: none;
+  display: block;
+}
+
+/* Solo para el Select: volvemos a poner la flecha porque el appearance:none la quita */
+select.custom-control {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23888' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  padding-right: 40px;
+}
+
+.custom-control:focus {
+  border-color: #555 !important;
+}
+
+/* Ajustes del contenedor de archivo */
+.file-box {
+  position: relative;
+  width: 100%;
+}
+
+.clip-btn {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #888;
+  z-index: 2;
+}
+
+.clip-btn:hover { color: white; }
