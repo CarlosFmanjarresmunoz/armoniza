@@ -15,7 +15,11 @@ function Registro() {
     deptoCentro: '',
     centro: '',
     tipoDocumento: '',
-    numeroIdentidad: ''
+    numeroIdentidad: '',
+    genero: '',
+    paisDomicilio: '',
+    departamentoEstado: '',
+    ciudadDomicilio: ''
   });
 
   const handleFileChange = (e, field) => {
@@ -120,7 +124,7 @@ function Registro() {
               </div>
             </div>
 
-            <div className="Datos-identicaion">Datos de identificación</div>
+            <div className="Label-header">Datos de identificación</div>
             <div className="Registro-form">
 
               
@@ -247,6 +251,53 @@ function Registro() {
                 </div>   
                
               </div>
+            </div>
+
+            <div className="Label-header">Información de contacto</div>
+            <div className="Registro-form">
+               <div className="form-row" >
+                {/* SELECT PAÍS DE DOMICILIO*/}
+                <div className="field">
+                  <label>País de domicilio</label>
+                  <select name="paisDomicilio" value={formData.paisDomicilio} onChange={handleChange} className="custom-control">
+                    <option value="">Selecciona país de domicilio</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Ecuador">Ecuador</option>
+                    <option value="Perú">Perú</option>
+                  </select>
+                </div> 
+                {/* SELECT DEPARTAMENTO/ESTADO */}
+                <div className="field">
+                  <label>Departamento/Estado</label>
+                  <select name="departamentoEstado" value={formData.departamentoEstado} onChange={handleChange} className="custom-control">
+                    <option value="">Selecciona departamento/estado</option>
+                    <option value="Antioquia">Antioquia</option>
+                    <option value="Cundinamarca">Cundinamarca</option>
+                    <option value="Valle del Cauca">Valle del Cauca</option>
+                  </select>
+                </div> 
+                {/* SELECT CIUDAD DE DOMICILIO*/}
+                <div className="field">
+                  <label>Ciudad de domicilio</label>
+                  <select name="ciudadDomicilio" value={formData.ciudadDomicilio} onChange={handleChange} className="custom-control">
+                    <option value="">Selecciona ciudad de domicilio</option>
+                    <option value="Medellín">Medellín</option>
+                    <option value="Bogotá">Bogotá</option>
+                    <option value="Cali">Cali</option>
+                  </select>
+                </div>                   
+                {/* INPUT DIRECCIÓN DE DOMICILIO */}
+                <div className="field">
+                  <label>Dirección de domicilio</label>
+                  <input
+                    type="text"
+                    name="direccionDomicilio"
+                    value={formData.direccionDomicilio}
+                    onChange={handleChange}
+                    className="custom-control"
+                  />
+                </div>
+            </div>
             </div>
           </form>
         </main>
