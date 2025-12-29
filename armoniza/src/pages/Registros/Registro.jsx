@@ -427,7 +427,150 @@ function Registro() {
 
               </div>
 
-             
+              <div className="Label-header">Datos de estudio</div>
+              <div className="Registro-form">
+                <div className="form-row" >
+                  {/* INPUT CORREO ELECTRONICO */}
+                  <div className="field">
+                    <label>Correo electrónico</label>
+                    <input
+                      type="email"
+                      name="correoElectronico"
+                      value={formData.correoElectronico}
+                      onChange={handleChange}
+                      className="custom-control"
+                      placeholder="correo@ejemplo.com"
+                    />
+                  </div>
+                  {/* INPUT PERFIL DE LINKEDIN */}
+                  <div className="field">
+                    <label>Perfil de LinkedIn (opcional)</label>
+                    <input
+                      type="text"
+                      name="perfilLinkedIn"
+                      value={formData.perfilLinkedIn}
+                      onChange={handleChange}
+                      className="custom-control"
+                      placeholder="https://www.linkedin.com/in/nombreusuario"
+                    />
+                  </div>
+
+                  {/* SELECT GRADO DE ESCOLARIDAD */}
+                  <div className="field">
+                    <label>Grado de escolaridad</label>
+                    <select
+                      name="gradoEscolaridad"
+                      value={formData.gradoEscolaridad}
+                      onChange={handleChange}
+                      className="custom-control"
+                    >
+                      <option value="">Selecciona un grado</option>
+                      <option value="primaria">Primaria</option>
+                      <option value="secundaria">Secundaria</option>
+                      <option value="preparatoria">Preparatoria</option>
+                      <option value="licenciatura">Licenciatura</option>
+                      <option value="posgrado">Posgrado</option>
+                    </select>
+                  </div>
+
+                  {/* INPUT FECHA DE GRADO */}
+                  <div className="field">
+                    <label>Fecha de grado</label>
+                    <input
+                      type="date"
+                      name="fechaGrado"
+                      value={formData.fechaGrado}
+                      onChange={handleChange}
+                      className="custom-control"
+                    />
+                  </div>
+
+                  {/* SELECT PROFESIÓN */}
+                  <div className="field">
+                    <label>Profesión</label>
+                    <select
+                      name="profesion"
+                      value={formData.profesion}
+                      onChange={handleChange}
+                      className="custom-control"
+                    >
+                      <option value="">Selecciona una profesión</option>
+                      <option value="ingenieria">Ingeniería</option>
+                      <option value="medicina">Medicina</option>
+                      <option value="derecho">Derecho</option>
+                      <option value="arquitectura">Arquitectura</option>
+                      <option value="psicologia">Psicología</option>
+                    </select>
+                  </div>
+
+                  {/* INPUT CERTIFICADO GRADO ESCOLARIDAD */}
+                  <div className="field">
+                    <label>Certificado de grado escolaridad</label>
+                    <div className="file-box">
+                      <input
+                        type="text"
+                        value={files.documentoIdName}
+                        placeholder="Adjunte su documento"
+                        readOnly
+                        className="custom-control"
+                      />
+                      <span className="clip-btn" onClick={() => fileInputDoc.current.click()}>📎</span>
+                      <input
+                        type="file"
+                        ref={fileInputDoc}
+                        onChange={(e) => handleFileChange(e, "documentoIdName")}
+                        hidden
+                      />
+                    </div>
+                  </div>
+                  {/* INPUT EZPECIALIDADES */}
+                  <div className="field">
+                    <label>especialidades</label>
+                    <input
+                      type="text"
+                      name="especialidades"
+                      value={formData.especialidades}
+                      onChange={handleChange}
+                      className="custom-control"
+                      placeholder="Especialidades"
+                    />
+                  </div>
+                  {/* INPUT CURSOS REALIZADOS */}
+                  <div className="field">
+                    <label>Cursos realizados</label>
+                    <input
+                      type="text"
+                      name="cursosRealizados"
+                      value={formData.cursosRealizados}
+                      onChange={handleChange}
+                      className="custom-control"
+                      placeholder="Cursos realizados"
+                    />
+                  </div>
+
+                  {/* INPUT DILIGENCIAR HV */}
+                  <div className="field">
+                    <label>Diligenciar HV (PDF/Word)</label>
+                    <div className="file-box">
+                      <input
+                        type="text"
+                        value={files.documentoIdName}
+                        placeholder="Adjunte HV"
+                        readOnly
+                        className="custom-control"
+                      />
+                      <span className="clip-btn" onClick={() => fileInputDoc.current.click()}>📎</span>
+                      <input
+                        type="file"
+                        ref={fileInputDoc}
+                        onChange={(e) => handleFileChange(e, "documentoIdName")}
+                        hidden
+                      />
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
             </div>
           </form>
         </main>
