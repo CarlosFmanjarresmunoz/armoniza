@@ -101,4 +101,26 @@ select.custom-control {
   z-index: 2;
 }
 
+.Datos-identicaion {
+  border-bottom: 2px solid #ffffff50;
+  padding-top: 20px;
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+}
+
 .clip-btn:hover { color: white; }
+
+.custom-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+}
+
+.custom-control:focus {
+  outline: none;
+  border-color: #555;
+}
