@@ -1,10 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
 import './index.css'
-import InicioSesion from  './inicioSesion'
+import Router from './routers/Router'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <InicioSesion />
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   </StrictMode>,
 )

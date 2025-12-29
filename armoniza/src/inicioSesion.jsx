@@ -5,6 +5,8 @@ import logo_Isotipo from './assets/IsotipoBlanco.png';
 import mazo from './assets/mazo.jpeg';
 import ciudad from './assets/ciudad.jpeg';
 import reunion from './assets/reunion.jpeg';
+import Footer from './components/footers/footer.jsx';
+import { Link } from 'react-router-dom';
 
 function InicioSesion() {
   const [showPassword, setShowPassword] = useState(false);
@@ -51,7 +53,7 @@ function InicioSesion() {
 
   return (
     
-    <div className="InicioSesionLayout">
+    <><div className="InicioSesionLayout">
       {/* SECCIÓN IZQUIERDA: Branding y Mensaje */}
       <aside className="Carrusel">
         <img src={logo_Isotipo} alt="logo_Isotipo" className='logo_isotipo' />
@@ -61,10 +63,10 @@ function InicioSesion() {
               <img src={reunion} className='img-Carrusel' />
             </div>
             <div className="img-Carrusel">
-               <img src={mazo} alt="Mazo" />
+              <img src={mazo} alt="Mazo" />
             </div>
             <div className="img-Carrusel">
-               <img src={ciudad} alt="Ciudad" />
+              <img src={ciudad} alt="Ciudad" />
             </div>
           </div>
           <h1 className="hero-text">
@@ -88,27 +90,25 @@ function InicioSesion() {
           <form className="login-form">
             <div className="input-group">
               <label>Correo electrónico</label>
-              <input 
-                type="email" 
+              <input
+                type="email"
                 placeholder="Ingresa tu correo aquí"
                 value={email}
                 onChange={handleEmailChange}
-                onBlur={handleEmailBlur}
-              />
+                onBlur={handleEmailBlur} />
               {emailError && <p className="error">{emailError}</p>}
             </div>
 
             <div className="input-group">
               <label>Contraseña</label>
               <div className="password-wrapper">
-                <input 
-                  type={showPassword ? "text" : "password"} 
-                  placeholder="Ingresa tu contraseña" 
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Ingresa tu contraseña"
                   value={password}
-                  onChange={handlePasswordChange}
-                />
-                <button 
-                  type="button" 
+                  onChange={handlePasswordChange} />
+                <button
+                  type="button"
                   className="toggle-password"
                   onClick={() => setShowPassword(!showPassword)}
                 >
@@ -131,14 +131,18 @@ function InicioSesion() {
 
             <div className="button-group">
               <button type="submit" className="btn-primary">INICIO</button>
-              <button type="button" className="btn-secondary">Registrarme</button>
+              <Link to="/registro">
+                <button type="button" className="btn-secondary"> 
+                  Registrarme</button>
+              </Link>
             </div>
           </form>
         </div>
 
-        
+
       </main>
     </div>
+    <Footer /></>
   );
 }
 

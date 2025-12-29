@@ -10,7 +10,7 @@
 
 .InicioSesionLayout {
   display: flex;
-  height: 100%;
+  min-height: 100vh;
   background-color: var(--bg-dark);
   color: white;
   font-family: Arial, Helvetica, sans-serif;
