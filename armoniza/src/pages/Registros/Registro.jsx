@@ -225,6 +225,27 @@ function Registro() {
                     <option value="Perú">Perú</option>
                   </select>
                 </div> 
+                {/* INPUT FECHA DE NACIMIENTO */}
+                <div className="field">
+                  <label>Fecha de nacimiento</label>
+                  <input
+                    type="date"
+                    name="fechaNacimiento"
+                    value={formData.fechaNacimiento}
+                    onChange={handleChange}
+                    className="custom-control"
+                  />
+                </div>
+                {/* SELECT GENERO */}
+                <div className="field">
+                  <label>Genero</label>
+                  <select name="genero" value={formData.genero} onChange={handleChange} className="custom-control">
+                    <option value="">Selecciona genero</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                  </select>
+                </div>   
+               
               </div>
             </div>
           </form>
