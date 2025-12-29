@@ -8,8 +8,12 @@ function Registro() {
     <>
       <div className="registro">
         <aside className="Sidebar-Registro">
-          <img src={logo} alt="LogoVertical" className="logoVertical" />
-          <h1>Registro Page</h1>
+          <img src={logo} alt="Logo" className="logoVertical" />
+          <div className="section-video">
+            <div className="video-box">
+              <img src="https://picsum.photos/400/250?random=1" alt="preview" />
+            </div>
+          </div>
         </aside>
         <main>
           <form className="registro-form">
