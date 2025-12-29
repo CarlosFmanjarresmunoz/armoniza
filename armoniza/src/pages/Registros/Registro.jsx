@@ -19,7 +19,14 @@ function Registro() {
     genero: '',
     paisDomicilio: '',
     departamentoEstado: '',
-    ciudadDomicilio: ''
+    ciudadDomicilio: '',
+    estadoSocioeconomico: '',
+    tipoVia: '',
+    numeroVia: '',
+    letraVia: '',
+    complemento: '',
+    barrio: '',
+    codigoPostal: ''
   });
 
   const handleFileChange = (e, field) => {
@@ -127,7 +134,7 @@ function Registro() {
             <div className="Label-header">Datos de identificación</div>
             <div className="Registro-form">
 
-              
+
               <div className="form-row" >
                 {/* SELECT TIPO DE DOCUMENTO */}
                 <div className="field">
@@ -170,7 +177,7 @@ function Registro() {
                     <option value="Natural">Natural</option>
                     <option value="Jurídica">Jurídica</option>
                   </select>
-                </div>   
+                </div>
                 {/* INPUT PRIMER NOMBRE */}
                 <div className="field">
                   <label>Primer nombre</label>
@@ -228,7 +235,7 @@ function Registro() {
                     <option value="Ecuador">Ecuador</option>
                     <option value="Perú">Perú</option>
                   </select>
-                </div> 
+                </div>
                 {/* INPUT FECHA DE NACIMIENTO */}
                 <div className="field">
                   <label>Fecha de nacimiento</label>
@@ -248,14 +255,14 @@ function Registro() {
                     <option value="Masculino">Masculino</option>
                     <option value="Femenino">Femenino</option>
                   </select>
-                </div>   
-               
+                </div>
+
               </div>
             </div>
 
             <div className="Label-header">Información de contacto</div>
             <div className="Registro-form">
-               <div className="form-row" >
+              <div className="form-row" >
                 {/* SELECT PAÍS DE DOMICILIO*/}
                 <div className="field">
                   <label>País de domicilio</label>
@@ -265,7 +272,7 @@ function Registro() {
                     <option value="Ecuador">Ecuador</option>
                     <option value="Perú">Perú</option>
                   </select>
-                </div> 
+                </div>
                 {/* SELECT DEPARTAMENTO/ESTADO */}
                 <div className="field">
                   <label>Departamento/Estado</label>
@@ -275,7 +282,7 @@ function Registro() {
                     <option value="Cundinamarca">Cundinamarca</option>
                     <option value="Valle del Cauca">Valle del Cauca</option>
                   </select>
-                </div> 
+                </div>
                 {/* SELECT CIUDAD DE DOMICILIO*/}
                 <div className="field">
                   <label>Ciudad de domicilio</label>
@@ -285,19 +292,142 @@ function Registro() {
                     <option value="Bogotá">Bogotá</option>
                     <option value="Cali">Cali</option>
                   </select>
-                </div>                   
-                {/* INPUT DIRECCIÓN DE DOMICILIO */}
+                </div>
+
+
+                {/* FILA COMPACTA PARA DIRECCIÓN COMPLETA */}
+                <div className="address-compact">
+                  {/* SELECT TIPO DE VÍA */}
+                  <div className="field-compact">
+                    <label>Tipo de vía</label>
+                    <select name="tipoVia" value={formData.tipoVia} onChange={handleChange} className="custom-control">
+                      <option value="">Selecciona tipo de vía</option>
+                      <option value="Calle">Calle</option>
+                      <option value="Carrera">Carrera</option>
+                      <option value="Autopista">Autopista</option>
+                      <option value="Avenida">Avenida</option>
+                      <option value="Diagonal">Diagonal</option>
+                      <option value="Transversal">Transversal</option>
+                    </select>
+                  </div>
+                  {/* INPUT NÚMERO DE VÍA */}
+                  <div className="field-compact">
+                    <label>N de vía</label>
+                    <input
+                      type="text"
+                      name="numeroVia"
+                      value={formData.numeroVia}
+                      onChange={handleChange}
+                      className="custom-control"
+                      placeholder="123"
+                    />
+                  </div>
+                  {/* INPUT LETRA DE VÍA */}
+                  <div className="field-compact">
+                    <label>Letra (opc)</label>
+                    <input
+                      type="text"
+                      name="letraVia"
+                      value={formData.letraVia}
+                      onChange={handleChange}
+                      className="custom-control"
+                      placeholder="A"
+                    />
+                  </div>
+                  {/* INPUT COMPLEMENTO */}
+                  <div className="field-compact">
+                    <label>Complemento</label>
+                    <input
+                      type="text"
+                      name="complemento"
+                      value={formData.complemento}
+                      onChange={handleChange}
+                      className="custom-control"
+                      placeholder="#45-67"
+                    />
+                  </div>
+                  {/* INPUT BARRIO */}
+                  <div className="field-compact">
+                    <label>Barrio</label>
+                    <input
+                      type="text"
+                      name="barrio"
+                      value={formData.barrio}
+                      onChange={handleChange}
+                      className="custom-control"
+                      placeholder="Centro"
+                    />
+                  </div>
+                  {/* INPUT CÓDIGO POSTAL */}
+                  <div className="field-compact">
+                    <label>Código postal</label>
+                    <input
+                      type="text"
+                      name="codigoPostal"
+                      value={formData.codigoPostal}
+                      onChange={handleChange}
+                      className="custom-control"
+                      placeholder="050001"
+                    />
+                  </div>
+
+                </div>
+
+                {/* SELECT ESTRATO SOCIOECONOMICO */}
                 <div className="field">
-                  <label>Dirección de domicilio</label>
+                  <label>Estrato socioeconómico</label>
+                  <select name="estratoSocioeconomico" value={formData.estratoSocioeconomico} onChange={handleChange} className="custom-control">
+                    <option value="">Selecciona estrato socioeconómico</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
+                </div>
+
+                {/* INPUT TELEFONO 1*/}
+                <div className="field">
+                  <label>Telefono 1</label>
                   <input
                     type="text"
-                    name="direccionDomicilio"
-                    value={formData.direccionDomicilio}
+                    name="telefono1"
+                    value={formData.telefono1}
                     onChange={handleChange}
                     className="custom-control"
+                    placeholder="123456789"
                   />
                 </div>
-            </div>
+                {/* INPUT TELEFONO 2*/}
+                <div className="field">
+                  <label>Telefono 2 (opcional)</label>
+                  <input
+                    type="text"
+                    name="telefono2"
+                    value={formData.telefono2}
+                    onChange={handleChange}
+                    className="custom-control"
+                    placeholder="123456789"
+                  />
+                </div>
+
+                {/* INPUT FAX*/}
+                <div className="field">
+                  <label>Fax (opcional)</label>
+                  <input
+                    type="text"
+                    name="fax"
+                    value={formData.fax}
+                    onChange={handleChange}
+                    className="custom-control"
+                    placeholder="123456789"
+                  />
+                </div>
+
+              </div>
+
+             
             </div>
           </form>
         </main>
