@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import "./Registro.css";
 import Footer from "../../components/footers/footer";
 import logo from "../../assets/LOGO_3.png";
+import { Link } from "react-router-dom";
 
 function Registro() {
   const fileInputDoc = useRef(null);
@@ -371,6 +372,7 @@ function Registro() {
                     />
                   </div>
 
+                 
                 </div>
 
                 {/* SELECT ESTRATO SOCIOECONOMICO */}
@@ -567,10 +569,21 @@ function Registro() {
                         hidden
                       />
                     </div>
+                    <label className="terminos-condicones">Estas de acuerdo con los <a href="">terminos y condiciones</a>
+                    <input type="checkbox" />
+                    </label>
+
+                    <Link to="/">
+                      <button type="button" className="btn-solicitar">
+                        Solicitar</button>
+                    </Link>
+
                   </div>
+
                 </div>
-                
               </div>
+
+
             </div>
           </form>
         </main>
